@@ -13,6 +13,7 @@
 [![SurveyBench](https://img.shields.io/badge/SurveyBench-94.66%25-0a0a0b?style=for-the-badge)](SurveyBench/)
 [![Accepted](https://img.shields.io/badge/Accepted-10%20papers-c9a14a?style=for-the-badge)](#-track-record)
 [![中文 README](https://img.shields.io/badge/中文-README-dc2626?style=for-the-badge)](README.zh-CN.md)
+[![Join WeChat](https://img.shields.io/badge/JOIN-WECHAT-07c160?style=for-the-badge&logo=wechat&logoColor=white&labelColor=555555)](assets/badges/wechat_qr.png)
 
 </div>
 
