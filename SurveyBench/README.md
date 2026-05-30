@@ -43,3 +43,40 @@ cap, averaged over three independent judge runs:
   templates, and proprietary infrastructure have been removed.
 - Only the final per-topic survey body is shipped; intermediate revision
   passes, per-pass logs, and judge-side traces are omitted.
+
+## Reproducibility & Evaluation Protocol
+
+We report PaperGuru's numbers under the **official SurveyBench judge** so
+that the SurveyBench authors or any third party can independently re-score
+our 20 surveys without trusting our self-reported numbers.
+
+**Judge.** Scores use the official `claude-opus-4.7` judge at the 200K-character
+truncation cap, averaged over **three independent judge runs** (variance
+reported in the main paper). The content score is the mean over the five
+SurveyBench content dimensions (Coverage, Coherence, Depth, Focus, Fluency);
+Richness is the composite figure/table/code measure defined by SurveyBench.
+
+**How to re-score our surveys (anyone can do this):**
+
+1. Take the 20 final surveys in `md/` (or the compiled `pdf/`).
+2. Run them through the official SurveyBench judging harness
+   (`OpenDataBox/SurveyBench`) with your own judge model.
+3. The content average should reproduce **94.66%** (raw 4.733 / 5) and the
+   composite richness **43.76%** (raw 10.94 / 25) within judge variance.
+
+**Why the Richness gap is robust.** Composite richness is a *file-system
+measurement* — it counts resolved figures, tables, and executable code
+blocks actually present in the survey artifact. It does **not** depend on
+the LLM judge, so the gap (43.76% vs. the strongest baseline's 20.36%) is
+invariant under judge swap and under truncation swap. Two baselines
+(ASur, SurveyForge) score exactly 0.00% here because they emit no figures
+or tables at all — this is directly verifiable by inspecting their outputs.
+
+**Normalization.** All SurveyBench dimensions in our tables are normalized
+to [0, 100%] from the raw 0–5 (content) and 0–25 (richness) scales for
+readability; raw values are given alongside.
+
+> If you are a SurveyBench maintainer and would like us to format these
+> results for a leaderboard, or want a held-out re-scoring run, please open
+> an issue on this repository — we are happy to cooperate on independent
+> verification.
