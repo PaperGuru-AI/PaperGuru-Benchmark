@@ -118,20 +118,10 @@ The submissions were graded through the **Full-mode reproduction stage** on the 
 ## Reproducibility
 
 To regenerate this comparison:
-- AiScientist data: arXiv:2604.13018, Table 1, transcribed manually from the paper PDF (fetched via `https://r.jina.ai/https://arxiv.org/pdf/2604.13018`).
-- PaperGuru data: per-paper grade.json files in `[redacted-path]`.
-- Aggregate: `[redacted-path]`.
+- AiScientist data: arXiv:2604.13018, Table 1, transcribed manually from the paper PDF.
+- PaperGuru data: the released code submissions live in `submissions/`; the
+  aggregate score file is `aggregate-final.json`.
 
-To rerun PaperGuru Full-mode grading with the same submissions:
-```bash
-for paper in $(ls [redacted-path]); do
-  bash [redacted-path] "$paper" full
-done
-```
-
-The **Full-mode** grading above (rubric + reproduction stage) is what produced
-the 66.05% number and gives an apples-to-apples comparison vs AiScientist. It
-requires:
-- GPU host with `--runtime=nvidia` Docker (we used 1× H200 at `cloud@195.242.13.82`).
-- Building the `pb-reproducer` Docker image (the China-network build needs the Aliyun mirror patch we applied to `pb-env`).
-- ~12-72h per paper depending on training cost.
+The submissions in `submissions/` are graded with the official PaperBench
+rubric-tree grader (leaf judge `o3-mini-2025-01-31`); the aggregate of those
+per-paper scores is the `66.05%` reported here.

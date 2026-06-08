@@ -7,16 +7,12 @@ This directory contains the masked artifacts of our CCM-backed run on the
 ## Layout
 
 ```
-results/paperbench/
-├── submissions/    23 per-paper code submissions
-│                   (one subdir per paper-id; .git history removed)
-└── results/        official PaperBench grader output
-    ├── grade-jsons/         per-paper rubric scores (machine-readable JSON)
-    ├── grading-logs/        per-paper grader logs (text)
-    ├── aggregate.json       aggregate per-paper scores
-    ├── aggregate-final.json aggregate, frozen final
-    ├── REPORT.md            human-readable headline report
-    └── PER_PAPER_COMPARISON.md   per-paper deltas vs. published baselines
+PaperBench/
+├── submissions/             23 per-paper code submissions
+│                            (one subdir per paper-id; .git history removed)
+├── aggregate-final.json     aggregate per-paper scores (frozen final)
+├── REPORT.md                human-readable headline report
+└── PER_PAPER_COMPARISON.md  per-paper deltas vs. published baselines
 ```
 
 ## Headline Numbers (Table 6 in the main paper)
@@ -39,8 +35,8 @@ Full-mode evaluation (code development + reproduction stage),
 
 - Internal command-line tools and frontend shells are still referred to with
   neutral tokens (`[anon-cli]`, `[anon-frontend]`).
-- All absolute on-disk paths revealing local directory layout have been
-  replaced with `[redacted-path]`.
+- Local and remote machine paths and host details have been omitted; commands
+  are described in terms of the repo-relative `submissions/` directory instead.
 - `.git` histories have been stripped from the per-paper submission trees.
 - Prompt templates, agent system prompts, and runner code are NOT shipped
   here; only the produced code submissions (the bench-grading inputs) and
@@ -51,9 +47,7 @@ Full-mode evaluation (code development + reproduction stage),
 - The 23 per-paper submission trees live under `submissions/<paper-id>/submission/`
   and are byte-faithful (modulo masking) to what was scored by the
   PaperBench grader.
-- Per-paper grader output (one JSON per paper) lives under
-  `results/grade-jsons/<paper-id>.json` and follows the canonical
-  PaperBench rubric tree schema.
+- The aggregate of the per-paper scores is recorded in `aggregate-final.json`.
 
 ## Reproducibility & Evaluation Protocol
 
@@ -65,8 +59,8 @@ scores.
 **Grading was produced with the official grader.** Every score in the table
 above comes from the PaperBench rubric-tree grader
 (`openai/preparedness` → `project/paperbench`), not from any in-house
-scoring. The per-paper rubric JSONs under `results/grade-jsons/` follow the
-canonical PaperBench schema and can be diffed against a fresh grading run.
+scoring. The aggregate in `aggregate-final.json` follows the canonical
+PaperBench schema and can be diffed against a fresh grading run.
 
 **How to re-grade our submissions (anyone can do this):**
 
@@ -90,7 +84,7 @@ the published baselines and the human bar.
 
 **No cherry-picking.** All 23 papers are released, including the single
 regression (`pinn`). Per-paper deltas — wins and losses — are in
-`results/PER_PAPER_COMPARISON.md`.
+`PER_PAPER_COMPARISON.md`.
 
 > If you are a PaperBench maintainer and would like us to format these
 > results for the leaderboard, or want a held-out re-grading run, please
