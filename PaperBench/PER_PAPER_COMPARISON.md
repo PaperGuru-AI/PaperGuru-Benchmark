@@ -6,33 +6,6 @@
 
 ---
 
-## Methodology Note
-
-All methods in this report are compared under the **same PaperBench Full
-evaluation mode**, so the scores are directly comparable:
-
-| Method | What is graded |
-|---|---|
-| **[anon-runtime] (ours)** | Rubric grading + **Reproduction stage** — code is executed and paper-target metrics must match, on top of the static rubric leaves (code structure, hyperparameter alignment, baseline correctness, citation grounding). |
-| AiScientist (Chen et al.) — Gemini-3-Flash, GLM-5 | Rubric grading + **Reproduction stage** (24h H20 GPU per paper, paper-target metrics must match). |
-| BasicAgent o1-high | Same as AiScientist |
-| IterativeAgent o1-high | Same as AiScientist |
-
-**Implication**: Because every method is graded in Full mode — including the
-reproduction stage that executes the submitted code and checks paper-target
-metrics — our 66.05% mean is an apples-to-apples Full-mode number against the
-AiScientist, BasicAgent, and IterativeAgent baselines. No mode conversion is
-applied or needed.
-
-PaperBench original paper (Starace et al., ICML 2025), Full mode:
-- Full IterativeAgent o1-high: **26.0%**
-- Human expert (48h budget): **41.0%**
-
-Our 66.05% Full-mode mean exceeds the strongest published Full-mode baseline
-(AiScientist + GLM-5, 33.73%) and the 41% human-expert bar.
-
----
-
 ## Per-Paper Comparison Table
 
 | # | Paper | **[anon-runtime] (Ours)** | AiScientist + Gemini-3-Flash | AiScientist + GLM-5 | BasicAgent + Gemini-3-Flash | IterAgent + Gemini-3-Flash | BasicAgent + GLM-5 | IterAgent + GLM-5 |

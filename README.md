@@ -25,7 +25,7 @@
 
 | Benchmark | Metric | PaperGuru | Best published baseline | Lift |
 |---|---|---:|---:|---:|
-| **PaperBench** (OpenAI, 2025) | Mean reproduction across 23 papers | **66.05%** | 35.74% | **+30.21%** |
+| **PaperBench** (OpenAI, 2025) | Mean reproduction (20-paper shared set) | **65.95%** | 35.74% | **+30.21%** |
 | **PaperBench** | Papers above 41% human ML-PhD bar | **20 / 23** | 4 / 23 | **+16 papers** |
 | **SurveyBench** (Yan et al., 2025) | Content score (5-axis avg.) | **94.66%** | 80.60% | **+14.06%** |
 | **SurveyBench** | Composite richness (figures · tables · code) | **43.76%** | 20.36% | **+23.40%** |
