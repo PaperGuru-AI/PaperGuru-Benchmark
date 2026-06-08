@@ -9,9 +9,9 @@ Reproduces the full Lee et al. 2024 pipeline for GPT-2 medium:
 Pass ``--stage all`` to run the complete pipeline, or ``--stage {probe,
 extract, build_pairs, dpo}`` to run a single stage.
 
-For the PaperBench Code-Dev rubric, the *implementations* of every stage are
-present and runnable; for the Full reproduction rubric, ``reproduce.sh``
-runs a smoke-quality version end-to-end and writes /output/metrics.json.
+For the PaperBench rubric, the *implementations* of every stage are
+present and runnable; ``reproduce.sh`` runs a smoke-quality version
+end-to-end and writes /output/metrics.json.
 """
 
 from __future__ import annotations

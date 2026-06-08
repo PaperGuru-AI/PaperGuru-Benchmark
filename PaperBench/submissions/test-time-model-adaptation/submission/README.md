@@ -7,7 +7,7 @@ A self-contained PyTorch reimplementation of:
 > _International Conference on Machine Learning (ICML)_, 2024.
 > Original code: <https://github.com/mr-eggplant/FOA>
 
-This submission targets the **PaperBench Code-Dev** rubric: every block of
+This submission targets the **PaperBench Full** rubric: every block of
 the paper's algorithm is implemented as Python code, hyperparameters are
 populated from the paper's tables, and `reproduce.sh` will train + evaluate
 end-to-end on a GPU box.

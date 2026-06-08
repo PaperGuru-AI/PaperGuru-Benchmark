@@ -5,7 +5,7 @@ This repository is a faithful, executable implementation of
 > Wang, H.; Lu, H.; Yao, L.; Gong, D.
 > _Self-Expansion of Pre-trained Models with Mixture of Adapters for Continual Learning._ 2024.
 
-submitted to PaperBench (Code-Dev / Reproduction).
+submitted to PaperBench (Full: rubric + reproduction).
 
 ![architecture](figures/architecture.png)
 

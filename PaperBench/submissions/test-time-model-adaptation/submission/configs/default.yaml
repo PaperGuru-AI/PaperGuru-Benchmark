@@ -26,7 +26,7 @@ evaluation:
   batch_size: 64 # paper default, matches TENT/SAR
   severity: 5 # ImageNet-C severity 5 (Tables 2, 4)
   num_workers: 4
-  # In code-dev / smoke runs we cap samples per corruption to keep runtime low.
+  # In smoke runs we cap samples per corruption to keep runtime low.
   max_samples_per_corruption: 5000
   # Subset of corruptions to evaluate (smoke = first 3; full = all 15)
   corruptions:

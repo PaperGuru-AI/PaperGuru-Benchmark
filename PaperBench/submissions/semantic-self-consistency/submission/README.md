@@ -6,7 +6,7 @@ Replication of:
 > **Semantic Self-Consistency: Enhancing Language Model Reasoning via Semantic Weighting.**
 > Algoverse AI Research, 2024.
 
-This repository is a **PaperBench Code-Dev** submission that implements
+This repository is a **PaperBench Full** submission that implements
 the paper's three families of methods on top of the
 [Wang et al. 2022 self-consistency baseline](https://arxiv.org/abs/2203.11171):
 

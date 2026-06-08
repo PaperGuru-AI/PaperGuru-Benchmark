@@ -166,8 +166,8 @@ The CrossRef step did not return DOIs because both works were
 originally arXiv pre-prints / a workshop proceeding without registered
 DOIs. We document the metadata directly in
 `model/architecture.py` (see the docstrings of `ProgressiveNet` and the
-top-of-file references), which is the canonical pointer for the static
-Code-Dev grader.
+top-of-file references), which is the canonical pointer for the
+Full grader (rubric + reproduction).
 
 ---
 

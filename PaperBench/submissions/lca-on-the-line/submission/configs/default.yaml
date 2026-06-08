@@ -147,7 +147,7 @@ correlation:
   baselines: [id_top1, ac, aline_d, aline_s, id_lca] # Table 3 baselines
   scaler: minmax # paper §4.2: min-max scaling instead of probit
 
-# Smoke-test config used by reproduce.sh in Code-Dev mode.
+# Smoke-test config used by reproduce.sh.
 smoke_test:
   enabled: true
   num_models: 4 # ResNet18, ResNet50, CLIP_RN50, CLIP_RN50x4 (Table 1)

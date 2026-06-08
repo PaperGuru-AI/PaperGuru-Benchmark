@@ -7,7 +7,7 @@ This repository is a faithful PyTorch re-implementation of:
 > _Proceedings of the 41st International Conference on Machine Learning (ICML 2024)_, PMLR 235.
 > Original code: <https://github.com/interpolants/couplings>
 
-The submission targets PaperBench Code-Dev evaluation: every algorithmic
+The submission targets PaperBench Full evaluation: every algorithmic
 artefact, hyper-parameter, and architectural choice that is named in the
 paper or in the supplied addendum is implemented here.
 

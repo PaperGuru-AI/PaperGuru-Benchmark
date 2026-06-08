@@ -145,7 +145,7 @@ This is what the PaperBench Full-mode judge runs.
   simulator should come from
   <https://github.com/mackelab/tsnpe_neurips/>; that simulator is heavy
   (≈30000 + 9·20000 simulations and 31-D parameter inference) and is
-  treated as out-of-scope for the Code-Dev grader. The training loop
+  treated as out-of-scope for the Full grader. The training loop
   here is task-agnostic, so plugging in the Pyloric task adapter is a
   straightforward addition.
 - **TSNPE / SNVI baselines.** Per the addendum, the Section 5.3 results

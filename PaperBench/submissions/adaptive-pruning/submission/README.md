@@ -1,6 +1,6 @@
 # APT — Adaptive Pruning and Tuning Pretrained Language Models
 
-PaperBench code-development submission for:
+PaperBench Full (rubric + reproduction) submission for:
 
 > **Bowen Zhao, Hannaneh Hajishirzi, Qingqing Cao.**
 > _APT: Adaptive Pruning and Tuning Pretrained Language Models for Efficient

@@ -12,7 +12,7 @@ Supported backbones (paper §5.1):
   * (bert-base-uncased — same plumbing as RoBERTa)
 
 For LLaMA the same conversion works in principle but is out of scope for
-this code-dev replication (per addendum: 'All results involving LLaMa
+this replication (per addendum: 'All results involving LLaMa
 models are not required for replication').
 """
 

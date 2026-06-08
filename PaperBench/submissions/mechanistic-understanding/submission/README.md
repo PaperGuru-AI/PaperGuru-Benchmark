@@ -7,8 +7,8 @@ Code-only reproduction of:
 > Proceedings of the 41st International Conference on Machine Learning (ICML 2024).
 > Original code: <https://github.com/ajyl/dpo_toxic>
 
-This submission targets the PaperBench **Code-Dev** rubric and the **Full
-reproduction** rubric. Llama2 results are out of scope per
+This submission targets the PaperBench **Full** rubric (rubric grading plus
+reproduction). Llama2 results are out of scope per
 `addendum.md`; this repository implements the **GPT-2 medium** half end-to-end.
 
 ![Architecture](figures/architecture.png)

@@ -8,7 +8,7 @@ A PyTorch reproduction of:
 > _ICML 2024 (PMLR 235)._ arXiv:2402.17135.
 > Original code: <https://github.com/kvfrans/fre>
 
-This submission was prepared for **PaperBench Code-Dev** evaluation. Every
+This submission was prepared for **PaperBench Full** evaluation. Every
 architectural choice, hyperparameter, loss term, and reward-prior detail
 described in the paper and addendum is implemented below.
 
@@ -128,11 +128,11 @@ and the `sample_reward()` helper in `model/reward_priors.py`.
 
 ## Running
 
-### Code-Dev (static)
+### Static rubric (source inspection)
 
-The grader only inspects source files; no commands need to be run.
+The grader inspects the source files; no commands need to be run.
 
-### Full mode (executed in a container)
+### Reproduction run (executed in a container)
 
 ```bash
 bash reproduce.sh

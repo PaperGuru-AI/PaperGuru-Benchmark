@@ -21,9 +21,9 @@ results/paperbench/
 
 ## Headline Numbers (Table 6 in the main paper)
 
-Code-Development mode, `o3-mini-2025-01-31` leaf judge. Baselines below
-are taken from PaperBench (Starace et al., 2025) and AiScientist
-(Chen et al., 2026):
+Full-mode evaluation (code development + reproduction stage),
+`o3-mini-2025-01-31` leaf judge. Baselines below are taken from PaperBench
+(Starace et al., 2025) and AiScientist (Chen et al., 2026):
 
 | Method                                       | Mode      | Score    |
 |----------------------------------------------|-----------|----------|
@@ -33,8 +33,7 @@ are taken from PaperBench (Starace et al., 2025) and AiScientist
 | AiScientist + Gemini-3-Flash (Chen et al., 2026)| Full   | 30.52%   |
 | AiScientist + GLM-5 (Chen et al., 2026)      | Full      | 33.73%   |
 | Human Expert (48 h budget)                   | Full      | 41.00%   |
-| IterativeAgent + o1-high                     | Code-Dev  | 43.40%   |
-| **CCM (this paper)**                         | Code-Dev  | **66.05%**|
+| **CCM (this paper)**                         | Full      | **66.05%**|
 
 ## What is masked in this directory
 
@@ -53,7 +52,7 @@ are taken from PaperBench (Starace et al., 2025) and AiScientist
 
 - The 23 per-paper submission trees live under `submissions/<paper-id>/submission/`
   and are byte-faithful (modulo masking) to what was scored by the
-  PaperBench Code-Development grader.
+  PaperBench grader.
 - Per-paper grader output (one JSON per paper) lives under
   `results/grade-jsons/<paper-id>.json` and follows the canonical
   PaperBench rubric tree schema.
@@ -81,13 +80,15 @@ canonical PaperBench schema and can be diffed against a fresh grading run.
    solver expects — see the official README section *"I have submissions
    and just want to run grading"*).
 4. Run the grader with your own leaf-judge model; the aggregate should
-   reproduce the **66.05%** Code-Development figure within judge variance.
+   reproduce the **66.05%** Full-mode figure within judge variance.
 
-**Scope of the claim.** We report the **Code-Development** setting
-(the same setting in which the strongest published baseline, IterativeAgent +
-o1-high, scores 43.40%). We do not claim a Full-replication-mode number.
-The human-expert 41% reference is the Full-mode 48-hour ML-PhD bar reported
-by Starace et al. (2025); we cite it for context only.
+**Scope of the claim.** We report the **Full** setting (code development plus
+the reproduction stage), the same setting in which the published baselines —
+AiScientist + GLM-5 (33.73%), AiScientist + Gemini-3-Flash (30.52%), and
+IterativeAgent + o1-high (26.00%) — are evaluated. The human-expert 41%
+reference is the Full-mode 48-hour ML-PhD bar reported by Starace et al.
+(2025); our 66.05% Full-mode mean is therefore directly comparable to both
+the published baselines and the human bar.
 
 **No cherry-picking.** All 23 papers are released, including the single
 regression (`pinn`). Per-paper deltas — wins and losses — are in

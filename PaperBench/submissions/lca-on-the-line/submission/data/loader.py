@@ -8,7 +8,7 @@ Per the paper §4 (Dataset Setup) and the addendum:
     * ImageNet-A (Adversarial)   -- https://github.com/hendrycks/natural-adv-examples
     * ObjectNet                  -- https://objectnet.dev/
 
-For the smoke-test mode (used by reproduce.sh in Code-Dev), the loaders fall
+For the smoke-test mode (used by reproduce.sh), the loaders fall
 back to a synthetic in-memory dataset when the actual data is not present, so
 that `train.py` and `eval.py` remain importable + runnable without network.
 """

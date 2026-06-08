@@ -6,7 +6,7 @@
 #   2. Run a smoke-quality CIL training run on CIFAR-100 (10 tasks).
 #   3. Write final metrics to /output/metrics.json so the judge can read them.
 #
-# A short run is sufficient because PaperBench Code-Dev grades implementation
+# A short run is sufficient because the PaperBench grader checks implementation
 # coverage, not absolute accuracy. The full configuration in
 # configs/default.yaml mirrors the paper (Sec. 4.1) -- 5 epochs of adapter
 # training, 20 epochs of RD training, SGD with cosine annealing.

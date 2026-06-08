@@ -11,7 +11,7 @@ Usage
 
 The ``--smoke`` flag forces tiny iteration / sample counts so that the full
 pipeline (BaM + GSM + ADVI on every target type) completes within a couple of
-minutes on CPU.  It is what reproduce.sh invokes for the PaperBench Code-Dev
+minutes on CPU.  It is what reproduce.sh invokes for the PaperBench
 smoke evaluation.
 """
 
