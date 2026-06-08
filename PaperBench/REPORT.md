@@ -15,7 +15,7 @@
 
 **[anon-runtime] 66.05% on Full mode** (mean over 23 papers)
 
-| Method | Full Score |
+| Method | Score |
 |---|---:|
 | **[anon-runtime] (ours)** | **66.05%** ⭐ |
 | AiScientist + GLM-5 | 33.73% |

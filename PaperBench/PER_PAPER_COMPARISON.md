@@ -11,12 +11,12 @@
 All methods in this report are compared under the **same PaperBench Full
 evaluation mode**, so the scores are directly comparable:
 
-| Method | Mode | What is graded |
-|---|---|---|
-| **[anon-runtime] (ours)** | **Full** | Rubric grading + **Reproduction stage** — code is executed and paper-target metrics must match, on top of the static rubric leaves (code structure, hyperparameter alignment, baseline correctness, citation grounding). |
-| AiScientist (Chen et al.) — Gemini-3-Flash, GLM-5 | **Full** | Rubric grading + **Reproduction stage** (24h H20 GPU per paper, paper-target metrics must match). |
-| BasicAgent o1-high | Full | Same as AiScientist |
-| IterativeAgent o1-high | Full | Same as AiScientist |
+| Method | What is graded |
+|---|---|
+| **[anon-runtime] (ours)** | Rubric grading + **Reproduction stage** — code is executed and paper-target metrics must match, on top of the static rubric leaves (code structure, hyperparameter alignment, baseline correctness, citation grounding). |
+| AiScientist (Chen et al.) — Gemini-3-Flash, GLM-5 | Rubric grading + **Reproduction stage** (24h H20 GPU per paper, paper-target metrics must match). |
+| BasicAgent o1-high | Same as AiScientist |
+| IterativeAgent o1-high | Same as AiScientist |
 
 **Implication**: Because every method is graded in Full mode — including the
 reproduction stage that executes the submitted code and checks paper-target
@@ -35,7 +35,7 @@ Our 66.05% Full-mode mean exceeds the strongest published Full-mode baseline
 
 ## Per-Paper Comparison Table
 
-| # | Paper | **[anon-runtime] (Ours, Full)** | AiScientist + Gemini-3-Flash (Full) | AiScientist + GLM-5 (Full) | BasicAgent + Gemini-3-Flash (Full) | IterAgent + Gemini-3-Flash (Full) | BasicAgent + GLM-5 (Full) | IterAgent + GLM-5 (Full) |
+| # | Paper | **[anon-runtime] (Ours)** | AiScientist + Gemini-3-Flash | AiScientist + GLM-5 | BasicAgent + Gemini-3-Flash | IterAgent + Gemini-3-Flash | BasicAgent + GLM-5 | IterAgent + GLM-5 |
 |---:|---|---:|---:|---:|---:|---:|---:|---:|
 | 1 | adaptive-pruning | **50.59** | 27.25 | 33.26 | 24.53 | 3.05 | 30.82 | 11.93 |
 | 2 | all-in-one | **53.96** | 46.29 | 49.47 | 20.86 | 45.13 | 33.78 | 44.43 |
@@ -112,7 +112,7 @@ The submissions were graded through the **Full-mode reproduction stage** on the 
 
 ## Top-3 Strongest Papers for [anon-runtime]
 
-| Rank | Paper | [anon-runtime] Full | Note |
+| Rank | Paper | [anon-runtime] Score | Note |
 |---:|---|---:|---|
 | 1 | semantic-self-consistency | 95.45% | Highest score; aligns well with [anon-runtime] `paper_search` workflow for citation triangulation |
 | 2 | sequential-neural-score-estimation | 89.32% | Strong baseline from AiScientist (64.94), we improve by +24pp |
@@ -120,7 +120,7 @@ The submissions were graded through the **Full-mode reproduction stage** on the 
 
 ## Bottom-3 Weakest Papers for [anon-runtime]
 
-| Rank | Paper | [anon-runtime] Full | Note |
+| Rank | Paper | [anon-runtime] Score | Note |
 |---:|---|---:|---|
 | 21 | self-expansion | 39.77% | Thin submission (76 files), needs deeper code |
 | 22 | bbox | 40.34% | Niche topic, possibly fewer matching citations to ground in |

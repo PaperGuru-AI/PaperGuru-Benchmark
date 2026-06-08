@@ -25,15 +25,15 @@ Full-mode evaluation (code development + reproduction stage),
 `o3-mini-2025-01-31` leaf judge. Baselines below are taken from PaperBench
 (Starace et al., 2025) and AiScientist (Chen et al., 2026):
 
-| Method                                       | Mode      | Score    |
-|----------------------------------------------|-----------|----------|
-| BasicAgent + GPT-4o (Starace et al., 2025)   | Full      | 4.10%    |
-| BasicAgent + Claude-3.5 (Starace et al., 2025)| Full     | 21.00%   |
-| IterativeAgent + o1-high (Starace et al., 2025)| Full    | 26.00%   |
-| AiScientist + Gemini-3-Flash (Chen et al., 2026)| Full   | 30.52%   |
-| AiScientist + GLM-5 (Chen et al., 2026)      | Full      | 33.73%   |
-| Human Expert (48 h budget)                   | Full      | 41.00%   |
-| **CCM (this paper)**                         | Full      | **66.05%**|
+| Method                                          | Score    |
+|-------------------------------------------------|----------|
+| BasicAgent + GPT-4o (Starace et al., 2025)      | 4.10%    |
+| BasicAgent + Claude-3.5 (Starace et al., 2025)  | 21.00%   |
+| IterativeAgent + o1-high (Starace et al., 2025) | 26.00%   |
+| AiScientist + Gemini-3-Flash (Chen et al., 2026)| 30.52%   |
+| AiScientist + GLM-5 (Chen et al., 2026)         | 33.73%   |
+| Human Expert (48 h budget)                      | 41.00%   |
+| **CCM (this paper)**                            | **66.05%**|
 
 ## What is masked in this directory
 
