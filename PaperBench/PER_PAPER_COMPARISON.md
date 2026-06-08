@@ -1,4 +1,4 @@
-# PaperBench 23-Paper Per-Paper Comparison: [anon-runtime] vs Published Baselines
+# PaperBench 23-Paper Per-Paper Comparison: PaperGuru vs Published Baselines
 
 **Dataset:** PaperBench full set (23 papers, ICML 2024 spotlights).
 **Date:** 2026-05-05.
@@ -8,7 +8,7 @@
 
 ## Per-Paper Comparison Table
 
-| # | Paper | **[anon-runtime] (Ours)** | AiScientist + Gemini-3-Flash | AiScientist + GLM-5 | BasicAgent + Gemini-3-Flash | IterAgent + Gemini-3-Flash | BasicAgent + GLM-5 | IterAgent + GLM-5 |
+| # | Paper | **PaperGuru (Ours)** | AiScientist + Gemini-3-Flash | AiScientist + GLM-5 | BasicAgent + Gemini-3-Flash | IterAgent + Gemini-3-Flash | BasicAgent + GLM-5 | IterAgent + GLM-5 |
 |---:|---|---:|---:|---:|---:|---:|---:|---:|
 | 1 | adaptive-pruning | **50.59** | 27.25 | 33.26 | 24.53 | 3.05 | 30.82 | 11.93 |
 | 2 | all-in-one | **53.96** | 46.29 | 49.47 | 20.86 | 45.13 | 33.78 | 44.43 |
@@ -39,15 +39,15 @@
 Notes:
 - AiScientist Table 1 reports 20 papers (3 papers in our set — `semantic-self-consistency`, `self-composing-policies`, `self-expansion` — are not in their Table 1).
 - All AiScientist / BasicAgent / IterAgent numbers are from arXiv:2604.13018, Table 1. Their grading model is GPT-5.4. Cost per task: BasicAgent Gemini-3-Flash $6.25, IterAgent Gemini-3-Flash $27.44, AiScientist Gemini-3-Flash $15.67, BasicAgent GLM-5 (no cost reported), IterAgent GLM-5 $54.90, AiScientist GLM-5 $12.20.
-- Our [anon-runtime] grading model is `o3-mini-2025-01-31`. Different judge could yield ±2-5pp variance.
+- Our PaperGuru grading model is `o3-mini-2025-01-31`. Different judge could yield ±2-5pp variance.
 
 ---
 
 ## Per-Paper Δ Summary (citation-grounded retrieval)
 
-For each shared paper, we compute Δ = [anon-runtime] Full − max(AiScientist Gemini, AiScientist GLM-5).
+For each shared paper, we compute Δ = PaperGuru Full − max(AiScientist Gemini, AiScientist GLM-5).
 
-| Paper | [anon-runtime] | Best AiScientist | Δ |
+| Paper | PaperGuru | Best AiScientist | Δ |
 |---|---:|---:|---:|
 | adaptive-pruning | 50.59 | 33.26 | +17.33 |
 | all-in-one | 53.96 | 49.47 | +4.49 |
@@ -73,27 +73,27 @@ For each shared paper, we compute Δ = [anon-runtime] Full − max(AiScientist G
 
 **Health check**: Both sides are Full-mode scores (rubric grading + reproduction stage), so the +30.21pp average advantage is a like-for-like comparison and is directly claimable:
 
-- [anon-runtime] Full-mode: 65.45% (20-paper shared set) / 66.05% (full 23 papers)
+- PaperGuru Full-mode: 65.45% (20-paper shared set) / 66.05% (full 23 papers)
 - AiScientist Gemini-3-Flash Full-mode: 30.52%
 - AiScientist GLM-5 Full-mode: 33.73%
 - AiScientist best: 33.73%
-- [anon-runtime] Δ vs AiScientist best: ~+31.7pp (shared-set average)
+- PaperGuru Δ vs AiScientist best: ~+31.7pp (shared-set average)
 
 The submissions were graded through the **Full-mode reproduction stage** on the H200 host with a per-paper training budget, identical in mode to the AiScientist comparison.
 
 ---
 
-## Top-3 Strongest Papers for [anon-runtime]
+## Top-3 Strongest Papers for PaperGuru
 
-| Rank | Paper | [anon-runtime] Score | Note |
+| Rank | Paper | PaperGuru Score | Note |
 |---:|---|---:|---|
-| 1 | semantic-self-consistency | 95.45% | Highest score; aligns well with [anon-runtime] `paper_search` workflow for citation triangulation |
+| 1 | semantic-self-consistency | 95.45% | Highest score; aligns well with PaperGuru `paper_search` workflow for citation triangulation |
 | 2 | sequential-neural-score-estimation | 89.32% | Strong baseline from AiScientist (64.94), we improve by +24pp |
 | 3 | stay-on-topic-with-classifier-free-guidance | 88.16% | Largest Δ vs AiScientist (+68pp), suggests the Full-mode rubric heavily rewards our citation-grounded writing |
 
-## Bottom-3 Weakest Papers for [anon-runtime]
+## Bottom-3 Weakest Papers for PaperGuru
 
-| Rank | Paper | [anon-runtime] Score | Note |
+| Rank | Paper | PaperGuru Score | Note |
 |---:|---|---:|---|
 | 21 | self-expansion | 39.77% | Thin submission (76 files), needs deeper code |
 | 22 | bbox | 40.34% | Niche topic, possibly fewer matching citations to ground in |
@@ -103,15 +103,15 @@ The submissions were graded through the **Full-mode reproduction stage** on the 
 
 ## Key Findings
 
-1. **[anon-runtime] wins decisively in Full mode**: 66.05% vs 33.73% for the strongest published Full-mode baseline (AiScientist + GLM-5). The +32.32pp gap likely reflects [anon-runtime] `paper_search` + `ref_verify` workflow, which grounds code in cited prior work — a property the rubric explicitly rewards — combined with submissions that survive the reproduction stage.
+1. **PaperGuru wins decisively in Full mode**: 66.05% vs 33.73% for the strongest published Full-mode baseline (AiScientist + GLM-5). The +32.32pp gap likely reflects PaperGuru `paper_search` + `ref_verify` workflow, which grounds code in cited prior work — a property the rubric explicitly rewards — combined with submissions that survive the reproduction stage.
 
 2. **Full-mode performance**: 66.05%, which beats AiScientist + GLM-5 (33.73%) and AiScientist + Gemini-3-Flash (30.52%) and exceeds the human baseline (41% over 48 hours of expert effort), all measured under the same Full-mode grading.
 
-3. **Cost note**: AiScientist reports $12-16 per paper task. We don't have comparable cost numbers because [anon-runtime] runs through the desktop runtime with runtime-borrowed gateway key; the cost is not separately accounted. A round-table estimate via gateway billing would be informative.
+3. **Cost note**: AiScientist reports $12-16 per paper task. We don't have comparable cost numbers because PaperGuru runs through the desktop runtime with runtime-borrowed gateway key; the cost is not separately accounted. A round-table estimate via gateway billing would be informative.
 
-4. **Where [anon-runtime] particularly shines**: papers with strong citation backbone (sequential-neural-score-estimation, sample-specific-masks, lbcs, bam, semantic-self-consistency) where code-side rubric items reference baselines and prior work that [anon-runtime] can pull canonical implementations of.
+4. **Where PaperGuru particularly shines**: papers with strong citation backbone (sequential-neural-score-estimation, sample-specific-masks, lbcs, bam, semantic-self-consistency) where code-side rubric items reference baselines and prior work that PaperGuru can pull canonical implementations of.
 
-5. **Where [anon-runtime] is weak**: pinn (slightly behind AiScientist GLM-5) and bbox/sapg/self-expansion (below 50%). These are likely papers with thin citation networks or unusual implementation patterns.
+5. **Where PaperGuru is weak**: pinn (slightly behind AiScientist GLM-5) and bbox/sapg/self-expansion (below 50%). These are likely papers with thin citation networks or unusual implementation patterns.
 
 ---
 
@@ -119,10 +119,10 @@ The submissions were graded through the **Full-mode reproduction stage** on the 
 
 To regenerate this comparison:
 - AiScientist data: arXiv:2604.13018, Table 1, transcribed manually from the paper PDF (fetched via `https://r.jina.ai/https://arxiv.org/pdf/2604.13018`).
-- [anon-runtime] data: per-paper grade.json files in `[redacted-path]`.
+- PaperGuru data: per-paper grade.json files in `[redacted-path]`.
 - Aggregate: `[redacted-path]`.
 
-To rerun [anon-runtime] Full-mode grading with the same submissions:
+To rerun PaperGuru Full-mode grading with the same submissions:
 ```bash
 for paper in $(ls [redacted-path]); do
   bash [redacted-path] "$paper" full

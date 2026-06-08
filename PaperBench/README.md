@@ -37,12 +37,10 @@ Full-mode evaluation (code development + reproduction stage),
 
 ## What is masked in this directory
 
-- All references to specific runtime systems, agent frameworks, command-line
-  tools, gateway services, frontend shells, and proprietary backends have
-  been replaced with neutral tokens (`[anon-runtime]`, `[anon-cli]`,
-  `[anon-gateway]`, `[anon-frontend]`, `[backbone-LLM]`).
-- All absolute on-disk paths revealing the project name have been replaced
-  with `[redacted-path]`.
+- Internal command-line tools and frontend shells are still referred to with
+  neutral tokens (`[anon-cli]`, `[anon-frontend]`).
+- All absolute on-disk paths revealing local directory layout have been
+  replaced with `[redacted-path]`.
 - `.git` histories have been stripped from the per-paper submission trees.
 - Prompt templates, agent system prompts, and runner code are NOT shipped
   here; only the produced code submissions (the bench-grading inputs) and
